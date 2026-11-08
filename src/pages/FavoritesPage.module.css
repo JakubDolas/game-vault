@@ -1,0 +1,60 @@
+.container {
+    width: 100%;
+}
+
+.title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.emptyContainer {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #1a1f26;
+    border: 1px dashed #2d3540;
+    border-radius: 12px;
+    max-width: 600px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.emptyTitle {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin: 0;
+}
+
+.emptyText {
+    color: #8b9bb4;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.browseButton {
+    margin-top: 10px;
+    background-color: #00d4ff;
+    color: #0a0e14;
+    font-weight: 800;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.browseButton:hover {
+    background-color: #ffffff;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+    transform: translateY(-2px);
+}

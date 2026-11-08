@@ -5,12 +5,14 @@ import { fetchGameById } from "../api/gamesApi"
 
 import styles from "./GameDetailsPage.module.css"
 
-function GameDetailsPage(){
+function GameDetailsPage({ favorites, onToggleFavorite }){
     const {id} = useParams()
 
     const [game, setGame] = useState(null)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
+
+    const isFavorite = favorites.some((fav) => fav.id === game?.id)
 
     const loadGame = async () => {
         try {
@@ -59,14 +61,22 @@ function GameDetailsPage(){
                         <p><strong>Data premiery:</strong> {game.release_date}</p>
                     </div>
 
-                    <a 
-                        href={game.game_url} 
-                        target="_blank" 
-                        rel="noreferrer" 
-                        className={styles.playButton}
-                    >
-                        Zagraj za darmo
-                    </a>
+                    <div className={styles.buttonGroup}>
+                        <a 
+                            href={game.game_url} 
+                            target="_blank" 
+                            rel="noreferrer" 
+                            className={styles.playButton}
+                        >
+                            Zagraj za darmo
+                        </a>
+                        <button 
+                            className={`${styles.favoriteButton} ${isFavorite ? styles.favoriteActive : ''}`}
+                            onClick={() => onToggleFavorite(game)}
+                            >
+                            {isFavorite ? 'Usuń z ulubionych' : 'Dodaj do ulubionych'}
+                        </button>
+                    </div>
                 </div>
             </div>
 

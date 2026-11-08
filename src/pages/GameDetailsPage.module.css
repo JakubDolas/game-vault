@@ -76,23 +76,64 @@
     color: #ffffff;
 }
 
+.buttonGroup {
+    display: flex;
+    gap: 16px;
+    margin-top: auto;
+    flex-wrap: wrap;
+}
+
 .playButton {
-    align-self: flex-start;
     background-color: #00d4ff;
     color: #0a0e14;
     font-weight: 800;
-    font-size: 1rem;
-    padding: 12px 28px;
+    font-size: 0.95rem;
+    padding: 12px 24px;
     border-radius: 8px;
-    margin-top: auto;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.25);
     transition: all 0.2s ease;
-    box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
 }
 
 .playButton:hover {
     background-color: #ffffff;
-    box-shadow: 0 0 25px rgba(0, 212, 255, 0.6);
+    box-shadow: 0 0 22px rgba(0, 212, 255, 0.5);
     transform: translateY(-2px);
+}
+
+.favoriteButton {
+    background-color: #1a222d;
+    color: #ffffff;
+    border: 1px solid #ff4d4d;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(255, 77, 77, 0.15);
+    transition: all 0.2s ease;
+}
+
+.favoriteButton:hover {
+    background-color: rgba(255, 77, 77, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(255, 77, 77, 0.35);
+}
+
+.favoriteActive {
+    background-color: #ff4d4d;
+    color: #ffffff;
+}
+
+.favoriteActive:hover {
+    background-color: #e60000;
+    box-shadow: 0 0 22px rgba(255, 77, 77, 0.5);
 }
 
 .section {
